@@ -1,0 +1,10 @@
+Lab1 - Docker Lab
+  Local installation (DOcker desktop)
+    or 
+  https://labs.play-with-docker.com/ 
+    or
+  https://www.oreilly.com/start-trial/
+  
+  docker run hello-world 
+  docker images -> to see list of images
+  docker ps -> to see list of running contianers 
