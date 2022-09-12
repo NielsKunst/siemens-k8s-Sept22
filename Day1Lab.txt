@@ -1,3 +1,8 @@
+Lab 3 - Minikube installation and setup
+          https://minikube.sigs.k8s.io/docs/start/
+        cmd>minikube start
+        cmd>minikube status
+
 Lab 2 - Create a folder (c:\tmp\demo1)
   Create dockerfile(no extension)
       FROM golang:1.16-alpine
