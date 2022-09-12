@@ -1,3 +1,40 @@
+Lab 2 - Create a folder (c:\tmp\demo1)
+  Create dockerfile(no extension)
+      FROM golang:1.16-alpine
+      COPY Lab1.go ./
+      RUN go build -o ./Lab1 ./Lab1.go
+      EXPOSE 8090
+      CMD [ "./Lab1" ]
+  create Lab1.go
+        package main
+
+        import (
+            "fmt"
+            "net/http"
+            "os"
+          "time"
+        )
+
+        func hello(w http.ResponseWriter, req *http.Request) {
+
+          hn,_ := os.Hostname()
+          fmt.Println("..time = ", time.Now())
+            fmt.Fprintf(w, "<h1>Hello World !!!!</h1><h2>executed on server "+hn +"</h2>")	
+        }
+
+        func main() {
+            http.HandleFunc("/", hello)
+            http.ListenAndServe(":8090", nil)
+        }
+  cmd> cd tmp\demo1
+  cmd\demo1>docker build -t k8ssept . 
+  cmd\demo1>docker run -P -d k8ssept
+  cmd\demo1>docker run -P -d k8ssept
+  cmd\demo1>docker run -P -d k8ssept
+  cmd>docker ps 
+    check different ports 
+    invoke from browser (check messages and hostnames)
+---------------
 Lab1 - Docker Lab
   Local installation (DOcker desktop)
     or 
