@@ -1,3 +1,13 @@
+Lab3 - Create a service by exposing the deployment
+          kubectl expose deployment s2 --name=ser1 --port=8090 --target-port=8090
+        describe service, pod 
+Lab2 - Create deployment and check auto start of pods in case of problem
+        kubectl create deployment s2 --image=vaishalitapaswi/goimage:latest
+        1. check pods, delete a pod, check -it is created again
+        
+        kubectl create deployment s3 --image=vaishalitapaswi/goimage:latest --replicas=3
+        confirm 3 pods, delete couple of them, check restart message        
+
 Lab1 - linux/windows terminal (https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-deployment-em-)
   Minikube status 
            version
