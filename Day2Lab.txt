@@ -1,0 +1,15 @@
+Lab1 - linux/windows terminal (https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-deployment-em-)
+  Minikube status 
+           version
+           start
+           stop
+  Kubectl 
+        get nodes (1)
+        describe node nodename
+        get pods (0)
+        get deployments (0)
+        
+        create deployment 
+          kubectl create deployment nameofdeployment --image=nginx
+       get deployments and pods to confirm
+        
