@@ -1,3 +1,14 @@
+Lab 4 -  Load Balancer demo
+         delete all earlier deployments/services (kubectl delete deployment/service name)
+         kubectl create deployment s2 --image=vaishalitapaswi/goimage:latest --replicas=3
+         cmd>minikube dashboard 
+                    check pods, exec on each pod, curl/wget localhost:8090, check index.html
+                    check logs for each pod
+         kubectl expose deployment simple --name=simpleservice --port=8090 --target-port=8090 --type=LoadBalancer
+         cmd>minikube service  simpleservice
+         browser -> run multiple times and check round robin for three servers
+            delete any two pods , check service -> after new pods get started
+            
 Lab3 - Create a service by exposing the deployment
           kubectl expose deployment s2 --name=ser1 --port=8090 --target-port=8090
         describe service, pod 
