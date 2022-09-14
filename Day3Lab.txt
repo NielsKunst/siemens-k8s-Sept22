@@ -1,3 +1,51 @@
+Lab2 - type =  Node Port 
+      Deploy.yml
+--------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goimage
+  labels:
+    app: goimage
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: goimage
+  template:
+    metadata:
+      labels:
+        app: goimage
+    spec:
+      containers:
+      - name: goimage
+        image: vaishalitapaswi/goimage:latest
+        ports:
+        - containerPort: 8090
+-------------
+      nodeport.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  type: NodePort
+  selector:
+    app : goimage
+  ports:
+    - port: 8090
+      targetPort: 8090
+      nodePort: 30007
+-----------------------
+      use kubernetes to create deployment and service
+      kubectl get deployments -o wide
+      kubectl get services -o wide
+      kubectl describe service my-service
+            check endpoint
+      connect to your node (docker ...on in terminal )-> docker exec containerid curl localhost:30007
+      for goimage - check hostnames
+      for other images - check dashboard/logs of pod 
+      
 
 Lab1 - 
       delete all earlier deployments/services (kubectl delete deployment/service name)
