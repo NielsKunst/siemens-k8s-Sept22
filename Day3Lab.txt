@@ -1,3 +1,52 @@
+Image -  
+           tomcat:jre8-temurin-jammy (8080)
+Lab3 - combined yml file for deployment and service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myd
+  labels:
+    app: myd
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: myd
+  template:
+    metadata:
+      labels:
+        app: myd
+    spec:
+      containers:
+      - name: myd
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myservice
+spec:
+  selector:
+    app: myd
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer
+ --------------
+ debug - 
+       Service is not working -> url is not reachable
+            Service -> exposing deployment
+                  1. Deployment is wrong
+                        pod ready, connect to pods and check ping/curl/wget localhost:port(yml)
+                  2. Service wrong
+                        get services, describe (endpoints empty -> 3
+                  3. service-deployment
+                        1. port 2. selector
+                        confirm endpoints
+
+------------------
 Lab2 - type =  Node Port 
       Deploy.yml
 --------------
