@@ -1,0 +1,26 @@
+
+Lab1 - 
+      delete all earlier deployments/services (kubectl delete deployment/service name)
+            
+      Replace 
+          kubectl create deployment s2 --image=vaishalitapaswi/goimage:latest --replicas=3
+      with file option 
+          https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+          copy deploy yml file(deploy.yml) and modify to suit ( kubectl create deployment s2 --image=vaishalitapaswi/goimage:latest --replicas=3)
+          cmd>kubectl create -f deploy.yml
+         cmd>minikube dashboard 
+                    check pods, exec on each pod, curl/wget localhost:8090, check index.html
+                    check logs for each pod
+         modify dpeloy.yml to change number of replicas
+         cmd>kubectl apply -f deploy.yml
+         cmd>kubect edit deployment nameofdeployment
+      Replace    
+         kubectl expose deployment simple --name=simpleservice --port=8090 --target-port=8090 --type=LoadBalancer
+      with file option
+         search for service yml 
+         create service.yml -> modify to expose earlier deployment
+         kubectl create -f service.yml  
+     
+     cmd>minikube service  simpleservice
+         browser -> run multiple times and check round robin for three servers
+            delete any two pods , check service -> after new pods get started
