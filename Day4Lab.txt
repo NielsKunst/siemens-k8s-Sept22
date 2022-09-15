@@ -1,0 +1,11 @@
+Lab1 - PV and PVC
+  connect to Node
+      Dashboard/Docker/Minikube ssh
+        create a folder  
+            /mymnt/data
+        create a file aa.txt in the same
+  create pv.yml , pvc.yml, pod.yml (https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+  create pv, pvc, pod
+  connect to pod (exec/attach -> kubectl, dashboard)
+    confirm aa.txt is available in mounted volume
+----------------
