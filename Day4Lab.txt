@@ -1,3 +1,23 @@
+Assignment -
+       create a folder on minikube
+          mymnt/share/static 
+          create 1 index -> sudo  echo 'index page at 5.00 pm " > /mymnt/share/static/index.html
+          
+       create usecase/pv, pvc, pod '  
+      
+       connect to pod 
+            check directory /usr/share/nginx/html
+            cat index.html
+            sudo  echo 'log1 " > /mymnt/share/static/pod1.log
+       delete pod , create new pod
+           check the folder and confirm pod1.log is available
+       connect to minikube (Node) and confirm pod1.log
+       
+       User day3/deploy and loadbalancer.yml to deploy current pod configuration as service
+       modify index.html for node and check all pods reflecting the change in browser
+              do it using yml or kubectl create
+
+
 Lab1 - PV and PVC
   connect to Node
       Dashboard/Docker/Minikube ssh
