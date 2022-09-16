@@ -1,17 +1,29 @@
+Lab2 - create everything in namespace myns
+    Create a job(buxybox) and a cron job (busybox -> ubuntu:latest)
+        create a job
+        watch pods and jobs
+        dashboard -> for jobs
+                 -> change namesapce 
+        create a cron job (after 1 min)
+        watch cron jobs , pods(for 2/3 mins)
+        
+        Using yml files create job and cronjob 
+        kubectl delete ns myns
 Lab1 
-    show pods from default namespace
-    show pods from namespace kube-system
-    show pods from all namespaces
+    show pods from default namespace -> no arg
+    show pods from namespace kube-system - --namespace kube-sytem
+    show pods from all namespaces  -A
     
-    create namespace myns
+    create namespace myns -> create namespace name
     
     create deployment my-dep in default namespace    ////kubectl create deployment my-dep --image=busybox
     rerun the same command to oberve error
-    create deployment my-dep in namepsace  myns
+    create deployment my-dep in namepsace  myns -> --namespace myns
     
     show deployments form default/myns/all
     
-    modify default namespace as myns, so that 
-        kubectl get deployments shows all deployments from myns
+    modify default namespace as myns, so that   -> kubectl config set-context --current --namespace=myns
+            
+        kubectl get deployments shows all deployments from myns -> no parameter
       
     
