@@ -1,0 +1,17 @@
+Lab1 
+    show pods from default namespace
+    show pods from namespace kube-system
+    show pods from all namespaces
+    
+    create namespace myns
+    
+    create deployment my-dep in default namespace    ////kubectl create deployment my-dep --image=busybox
+    rerun the same command to oberve error
+    create deployment my-dep in namepsace  myns
+    
+    show deployments form default/myns/all
+    
+    modify default namespace as myns, so that 
+        kubectl get deployments shows all deployments from myns
+      
+    
